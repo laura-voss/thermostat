@@ -45,6 +45,15 @@ describe('Thermostat', () => {
       }
       expect(thermostat.up()).toEqual("It doesn't get warmer than this - Planet Saving Mode!!");
     });
+
+    it('limits the maximum temperature to 35 degree if PSM is off', () => {
+      const thermostat = new Thermostat();
+      thermostat.setPowerSavingMode(false);
+      for (let i = 0 ; i < 15 ; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.up()).toEqual("It doesn't get hotter than this...");
+    });
   });
 
   describe('.currentEnergyUsage', () => {

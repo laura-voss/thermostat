@@ -9,10 +9,14 @@ class Thermostat {
   }
 
   up() {
-    if ((this.PSM = true) && (this.temperature < 25)) {
+    if ((this.PSM === true) && (this.temperature < 25)) {
       this.temperature ++
-    } else if ((this.PSM = true) && (this.temperature >= 25)) {
+    } else if ((this.PSM === true) && (this.temperature >= 25)) {
       return "It doesn't get warmer than this - Planet Saving Mode!!"
+    } else if ((this.PSM === false) && (this.temperature < 35)) {
+      this.temperature ++
+    } else if ((this.PSM === false) && (this.temperature >= 35)) {
+      return "It doesn't get hotter than this..."
     }
   }
 
@@ -37,6 +41,8 @@ class Thermostat {
       return "Your energy usage is low - Yay for the planet"
     } else if ((this.temperature >= 18) && (this.temperature <= 25)) {
       return "Your energy usage is medium - Think about how you could reduce it..."
+    } else if (this.temperature > 25) {
+      return "You're nuts! - The planet is on fire!!!"
     }
   }
 }
