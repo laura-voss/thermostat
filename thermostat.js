@@ -35,6 +35,8 @@ class Thermostat {
   currentEnergyUsage() {
     if (this.temperature < 18) {
       return "Your energy usage is low - Yay for the planet"
+    } else if ((this.temperature >= 18) && (this.temperature <= 25)) {
+      return "Your energy usage is medium - Think about how you could reduce it..."
     }
   }
 }

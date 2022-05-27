@@ -56,7 +56,7 @@ describe('Thermostat', () => {
       expect(thermostat.currentEnergyUsage()).toEqual("Your energy usage is low - Yay for the planet");
     });
 
-    it(`let's the user know if energy usage is low`, () => {
+    it(`let's the user know if energy usage is medium`, () => {
       const thermostat = new Thermostat();
       for (let i = 0 ; i < 5 ; i++) {
         thermostat.up();
