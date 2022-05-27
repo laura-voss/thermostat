@@ -17,4 +17,12 @@ describe('Thermostat', () => {
     thermostat.down();
     expect(thermostat.getTemperature()).toBe(19);
   });
+
+  it(`it won't decrese temperature below 10 degrees`, () => {
+    const thermostat = new Thermostat();
+    for (let i = 0 ; i < 10 ; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.down()).toEqual("It's freezing mate...")
+  });
 });
