@@ -89,7 +89,7 @@ describe('Thermostat', () => {
       for (let i = 0 ; i < 5 ; i++) {
         thermostat.up();
       }
-      thermostat.reset
+      thermostat.reset();
       expect(thermostat.getTemperature()).toBe(20)
     });
   });

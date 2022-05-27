@@ -45,6 +45,10 @@ class Thermostat {
       return "You're nuts! - The planet is on fire!!!"
     }
   }
+
+  reset() {
+    this.temperature = 20
+  }
 }
 
 module.exports = Thermostat;
