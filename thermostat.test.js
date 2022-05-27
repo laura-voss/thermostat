@@ -11,4 +11,10 @@ describe('Thermostat', () => {
     thermostat.up();
     expect(thermostat.getTemperature()).toBe(21);
   });
+
+  it('decreases the temperature with a down method', () => {
+    const thermostat = new Thermostat();
+    thermostat.down();
+    expect(thermostat.getTemperature()).toBe(19);
+  });
 });
