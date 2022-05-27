@@ -46,4 +46,14 @@ describe('Thermostat', () => {
       expect(thermostat.up()).toEqual("It doesn't get warmer than this - Planet Saving Mode!!");
     });
   });
+
+  describe('.currentEnergyUsage', () => {
+    it(`let's the user know if energy usage is low`, () => {
+      const thermostat = new Thermostat();
+      for (let i = 0 ; i < 3 ; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.currentEnergyUsage()).toEqual("Your energy usage is low - Yay for the planet");
+    });
+  });
 });
