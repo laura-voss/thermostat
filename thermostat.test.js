@@ -5,4 +5,10 @@ describe('Thermostat', () => {
     const thermostat = new Thermostat();
     expect(thermostat.getTemperature()).toBe(20);
   });
+
+  it('increases the temperature with an up method', () => {
+    const thermostat = new Thermostat();
+    thermostat.up();
+    expect(thermostat.getTemperature()).toBe(21);
+  });
 });
