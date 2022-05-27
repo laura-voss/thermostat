@@ -9,7 +9,11 @@ class Thermostat {
   }
 
   up() {
-    this.temperature ++
+    if ((this.PSM = true) && (this.temperature < 25)) {
+      this.temperature ++
+    } else if ((this.PSM = true) && (this.temperature >= 25)) {
+      return "It doesn't get warmer than this - Planet Saving Mode!!"
+    }
   }
 
   down() {
