@@ -11,3 +11,14 @@
 * If power saving mode is off, the maximum temperature is 32 degrees
 * You can reset the temperature to 20 with a `reset` method
 * You can ask about the thermostat's current energy usage: < 18 is low-usage, <= 25 is medium-usage, anything else is high-usage.
+
+## Navigate
+```
+const thermostat = new Thermostat();
+
+thermostat.getTemperature();
+thermostat.up();
+thermostat.down();
+thermostat.setPowerSavingMode(false);
+thermostat.reset();
+```
