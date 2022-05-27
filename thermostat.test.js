@@ -18,7 +18,7 @@ describe('Thermostat', () => {
     expect(thermostat.getTemperature()).toBe(19);
   });
 
-  it(`it won't decrese temperature below 10 degrees`, () => {
+  it(`it won't decrease temperature below 10 degrees`, () => {
     const thermostat = new Thermostat();
     for (let i = 0 ; i < 10 ; i++) {
       thermostat.down();
@@ -30,6 +30,12 @@ describe('Thermostat', () => {
     it('PowerSavingMode is on by default', () => {
       const thermostat = new Thermostat();
       expect(thermostat.PSM).toBe(true);
+    });
+
+    it('PowerSavingMode can be turned off', () => {
+      const thermostat = new Thermostat();
+      thermostat.setPowerSavingMode(false);
+      expect(thermostat.PSM).toBe(false);
     });
   });
 });
