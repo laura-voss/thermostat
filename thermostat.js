@@ -1,6 +1,7 @@
 class Thermostat {
   constructor() {
     this.temperature = 20;
+    this.PSM = true;
   }
 
   getTemperature() {
