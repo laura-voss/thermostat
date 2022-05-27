@@ -19,6 +19,16 @@ class Thermostat {
       return "It's freezing mate..."
     }
   }
+
+  setPowerSavingMode(status) {
+    if (status === true) {
+      this.PSM = true;
+    } else if (status === false) {
+      this.PSM = false;
+    } else {
+      return "not valid"
+    }
+  }
 }
 
 module.exports = Thermostat;
