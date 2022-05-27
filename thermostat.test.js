@@ -63,5 +63,13 @@ describe('Thermostat', () => {
       }
       expect(thermostat.currentEnergyUsage()).toEqual("Your energy usage is medium - Think about how you could reduce it...");
     });
+
+    it(`let's the user know if energy usage is high`, () => {
+      const thermostat = new Thermostat();
+      for (let i = 0 ; i < 6 ; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.currentEnergyUsage()).toEqual("You're nuts! - The planet is on fire!!!");
+    });
   });
 });
