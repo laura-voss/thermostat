@@ -25,8 +25,6 @@ class Thermostat {
       this.PSM = true;
     } else if (status === false) {
       this.PSM = false;
-    } else {
-      return "not valid"
     }
   }
 }

@@ -23,7 +23,7 @@ describe('Thermostat', () => {
     for (let i = 0 ; i < 10 ; i++) {
       thermostat.down();
     }
-    expect(thermostat.down()).toEqual("It's freezing mate...")
+    expect(thermostat.down()).toEqual("It's freezing mate...");
   });
   
   describe('.setPowerSavingMode', () => {
@@ -36,6 +36,14 @@ describe('Thermostat', () => {
       const thermostat = new Thermostat();
       thermostat.setPowerSavingMode(false);
       expect(thermostat.PSM).toBe(false);
+    });
+
+    it('limits the maximum temperature to 25 degree if PSM is on', () => {
+      const thermostat = new Thermostat();
+      for (let i = 0 ; i < 5 ; i++) {
+        thermostat.up();
+      }
+      expect(thermostat.up()).toEqual("It doesn't get warmer than this - Planet Saving Mode!!");
     });
   });
 });
