@@ -5,26 +5,26 @@ class Thermostat {
   }
 
   getTemperature() {
-    return this.temperature
+    return this.temperature;
   }
 
   up() {
     if ((this.PSM === true) && (this.temperature < 25)) {
-      this.temperature ++
+      this.temperature ++;
     } else if ((this.PSM === true) && (this.temperature >= 25)) {
-      return "It doesn't get warmer than this - Planet Saving Mode!!"
+      return "It doesn't get warmer than this - Planet Saving Mode!!";
     } else if ((this.PSM === false) && (this.temperature < 35)) {
-      this.temperature ++
+      this.temperature ++;
     } else if ((this.PSM === false) && (this.temperature >= 35)) {
-      return "It doesn't get hotter than this..."
+      return "It doesn't get hotter than this...";
     }
   }
 
   down() {
     if (this.temperature > 10) {
-      this.temperature --
+      this.temperature --;
     } else {
-      return "It's freezing mate..."
+      return "It's freezing mate...";
     }
   }
 
@@ -38,16 +38,16 @@ class Thermostat {
 
   currentEnergyUsage() {
     if (this.temperature < 18) {
-      return "Your energy usage is low - Yay for the planet"
+      return "Your energy usage is low - Yay for the planet";
     } else if ((this.temperature >= 18) && (this.temperature <= 25)) {
-      return "Your energy usage is medium - Think about how you could reduce it..."
+      return "Your energy usage is medium - Think about how you could reduce it...";
     } else if (this.temperature > 25) {
-      return "You're nuts! - The planet is on fire!!!"
+      return "You're nuts! - The planet is on fire!!!";
     }
   }
 
   reset() {
-    this.temperature = 20
+    this.temperature = 20;
   }
 }
 

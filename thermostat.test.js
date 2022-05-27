@@ -1,41 +1,18 @@
 const Thermostat = require('./thermostat')
 
 describe('Thermostat', () => {
-  it('is created with initial temperature of 20 degrees', () => {
-    const thermostat = new Thermostat();
-    expect(thermostat.getTemperature()).toBe(20);
-  });
-
-  it('increases the temperature with an up method', () => {
-    const thermostat = new Thermostat();
-    thermostat.up();
-    expect(thermostat.getTemperature()).toBe(21);
-  });
-
-  it('decreases the temperature with a down method', () => {
-    const thermostat = new Thermostat();
-    thermostat.down();
-    expect(thermostat.getTemperature()).toBe(19);
-  });
-
-  it(`it won't decrease temperature below 10 degrees`, () => {
-    const thermostat = new Thermostat();
-    for (let i = 0 ; i < 10 ; i++) {
-      thermostat.down();
-    }
-    expect(thermostat.down()).toEqual("It's freezing mate...");
-  });
-  
-  describe('.setPowerSavingMode', () => {
-    it('PowerSavingMode is on by default', () => {
+  describe('.getTemperture', () => {
+    it('is created with initial temperature of 20 degrees', () => {
       const thermostat = new Thermostat();
-      expect(thermostat.PSM).toBe(true);
+      expect(thermostat.getTemperature()).toBe(20);
     });
+  });
 
-    it('PowerSavingMode can be turned off', () => {
+  describe('.up', () => {
+    it('increases the temperature with an up method', () => {
       const thermostat = new Thermostat();
-      thermostat.setPowerSavingMode(false);
-      expect(thermostat.PSM).toBe(false);
+      thermostat.up();
+      expect(thermostat.getTemperature()).toBe(21);
     });
 
     it('limits the maximum temperature to 25 degree if PSM is on', () => {
@@ -53,6 +30,35 @@ describe('Thermostat', () => {
         thermostat.up();
       }
       expect(thermostat.up()).toEqual("It doesn't get hotter than this...");
+    });
+  });
+
+  describe('.down', () => {
+    it('decreases the temperature with a down method', () => {
+      const thermostat = new Thermostat();
+      thermostat.down();
+      expect(thermostat.getTemperature()).toBe(19);
+    });
+
+    it(`it won't decrease temperature below 10 degrees`, () => {
+      const thermostat = new Thermostat();
+      for (let i = 0 ; i < 10 ; i++) {
+        thermostat.down();
+      }
+      expect(thermostat.down()).toEqual("It's freezing mate...");
+    });
+  });
+
+  describe('.setPowerSavingMode', () => {
+    it('PowerSavingMode is on by default', () => {
+      const thermostat = new Thermostat();
+      expect(thermostat.PSM).toBe(true);
+    });
+
+    it('PowerSavingMode can be turned off', () => {
+      const thermostat = new Thermostat();
+      thermostat.setPowerSavingMode(false);
+      expect(thermostat.PSM).toBe(false);
     });
   });
 
