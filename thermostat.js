@@ -12,9 +12,12 @@ class Thermostat {
   }
 
   down() {
-    this.temperature --
+    if (this.temperature > 10) {
+      this.temperature --
+    } else {
+      return "It's freezing mate..."
+    }
   }
-
 }
 
 module.exports = Thermostat;
