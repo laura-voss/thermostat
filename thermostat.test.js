@@ -82,4 +82,15 @@ describe('Thermostat', () => {
       expect(thermostat.currentEnergyUsage()).toEqual("You're nuts! - The planet is on fire!!!");
     });
   });
+
+  describe('.reset', () => {
+    it(`resets the temperature to 20 degree`, () => {
+      const thermostat = new Thermostat();
+      for (let i = 0 ; i < 5 ; i++) {
+        thermostat.up();
+      }
+      thermostat.reset
+      expect(thermostat.getTemperature()).toBe(20)
+    });
+  });
 });
