@@ -25,4 +25,11 @@ describe('Thermostat', () => {
     }
     expect(thermostat.down()).toEqual("It's freezing mate...")
   });
+  
+  describe('.setPowerSavingMode', () => {
+    it('PowerSavingMode is on by default', () => {
+      const thermostat = new Thermostat();
+      expect(thermostat.PSM).toBe(true);
+    });
+  });
 });
