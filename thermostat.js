@@ -31,6 +31,12 @@ class Thermostat {
       this.PSM = false;
     }
   }
+
+  currentEnergyUsage() {
+    if (this.temperature < 18) {
+      return "Your energy usage is low - Yay for the planet"
+    }
+  }
 }
 
 module.exports = Thermostat;
