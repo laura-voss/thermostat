@@ -66,6 +66,7 @@ describe('Thermostat', () => {
 
     it(`let's the user know if energy usage is high`, () => {
       const thermostat = new Thermostat();
+      thermostat.setPowerSavingMode(false)
       for (let i = 0 ; i < 6 ; i++) {
         thermostat.up();
       }
